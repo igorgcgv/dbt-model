@@ -1,0 +1,15 @@
+
+version: 2
+
+models:
+    - name: AIRBYTE_SCHEMA.SHEET1
+      schema: AIRBYTE_SCHEMA
+      database: AIRBYTE_DATABASE
+      description: "Created fact_finance"
+
+      columns:
+          - name: fact_finance
+            description: "Tabela fato que registra as movimentações de conta corrente"
+            tests:
+                - unique
+                - not_null
