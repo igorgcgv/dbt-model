@@ -11,7 +11,7 @@ WITH base_finance as (
     SHEET1.DETALHES 
                 
 FROM
-    {{source('AIRBYTE_SCHEMA.SHEET1')}}
+    {{source('base_finance','SHEET1')}}
     
 )
 
