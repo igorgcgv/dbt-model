@@ -1,15 +1,18 @@
-
 version: 2
 
-models:
-    - name: AIRBYTE_SCHEMA.SHEET1
-      schema: AIRBYTE_SCHEMA
-      database: AIRBYTE_DATABASE
-      description: "Created fact_finance"
+sources:
+  - name: raw_finance
+    schema: AIRBYTE_SCHEMA
+    database: AIRBYTE_DATABASE
+    description: "Created raw_finance"
+    tables:
+      - name: SHEET1
+        description: "Tabela base fato que registra as movimentações de conta corrente"
 
-      columns:
-          - name: fact_finance
-            description: "Tabela fato que registra as movimentações de conta corrente"
-            tests:
-                - unique
-                - not_null
+
+
+models:
+  - name: base_finance
+    description: "Modelo de base_finance com materialização em view"
+    config:
+      materialized: view

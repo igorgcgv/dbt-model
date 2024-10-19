@@ -11,7 +11,7 @@ WITH base_finance as (
     SHEET1.DETALHES 
                 
 FROM
-    {{source('base_finance','SHEET1')}}
+    {{source('raw_finance','SHEET1')}}
     
 )
 
