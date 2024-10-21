@@ -11,8 +11,15 @@ sources:
 
 
 
+
+
 models:
   - name: base_finance
     description: "Modelo de base_finance com materialização em view"
     config:
       materialized: view
+
+  - name: fact_finance
+    description: "Modelo de fact_finance com materialização em table , ou seja a tabela final"
+    config:
+      materialized: table
